@@ -1,0 +1,13 @@
+.banners {
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;        
+    }
+
+    .banner {
+        width: 565px;
+        height: 295px;
+        // background-color: red;
+    }
+}
