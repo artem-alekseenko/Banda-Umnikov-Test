@@ -48,13 +48,7 @@ gulp.task('styles:compile', function () {
 
 /* -------- JS  -------- */
 gulp.task('js', function() {
-    return gulp.src([
-        'source/js/init.js',
-        'source/js/validation.js',
-        'source/js/navigation.js',
-        'source/js/form.js',
-        'source/js/main.js'
-    ])
+    return gulp.src('source/js/main.js')
     .pipe(sourcemaps.init())
     .pipe(concat('main.min.js'))
     .pipe(uglify())
@@ -62,19 +56,6 @@ gulp.task('js', function() {
     .pipe(gulp.dest('build/js'));
 });
 
-
-/* ------------ Sprite ------------- */
-gulp.task('sprite', function (cb) {
-    const spriteData = gulp.src('source/images/icons/*.png').pipe(spritesmith({
-        imgName: 'sprite.png',
-        imgPath: '../images/sprite.png',
-        cssName: 'sprite.scss'
-    }));
-
-    spriteData.img.pipe(gulp.dest('build/images/'));
-    spriteData.css.pipe(gulp.dest('source/styles/global/'));
-    cb();
-});
 
 /* ------------ Delete ------------- */
 gulp.task('clean', function del(cb) {
@@ -100,12 +81,12 @@ gulp.task('copy', gulp.parallel('copy:fonts', 'copy:images'));
 gulp.task('watch', function () {
     gulp.watch('source/template/**/*.pug', gulp.series('templates:compile'));
     gulp.watch('source/styles/**/*.scss', gulp.series('styles:compile'));
-    // gulp.watch('source/js/**/*.js', gulp.series('js'));
+    gulp.watch('source/js/*.js', gulp.series('js'));
 });
 
 gulp.task('default', gulp.series(
-    'clean', //плагин rim-raf удаляет папку buid
-    gulp.parallel('templates:compile', 'styles:compile', /*'js',*/ 'sprite', 'copy'),
+    'clean',
+    gulp.parallel('templates:compile', 'styles:compile', 'js', 'copy'),
     gulp.parallel('watch', 'server')
 )
 );

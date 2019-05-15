@@ -101,7 +101,8 @@
                 border-right: 3px dashed yellow;
                 position: absolute;
                 top: 0px;
-              }
+                z-index: 9999;
+              }             
             }
 
             &__caption {
@@ -114,41 +115,41 @@
     }
 
     &__2 {
-        height: 295px;
+      height: 295px;
 
-        &__picture{
-          position: relative;
+      &__picture {
+        position: relative;
+      }
+
+      .banner__proposal__button {
+        position: absolute;
+        right: 23px;
+        bottom: 5px;
+
+        @media (max-width: 500px) {
+          width: 110px;
+          height: 40px;
+          bottom: 4px;
+          right: 18px;
+          font-size: 1.4rem;
         }
 
-        .banner__proposal__button {
-          position: absolute;
-          right: 23px;
+        @media (max-width: 420px) {
+          width: 90px;
+          height: 32px;
           bottom: 5px;
-
-          @media (max-width: 500px) {
-            width: 110px;
-            height: 40px;
-            bottom: 4px;
-            right: 18px;
-            font-size: 1.4rem;
-          }
-
-          @media (max-width: 420px) {
-            width: 90px;
-            height: 32px;
-            bottom: 5px;
-            right: 20px;
-            font-size: 1.2rem;
-          }
-
-          @media (max-width: 359px) {
-            width: 80px;
-            height: 32px;
-            bottom: 0px;
-            right: 10px;
-            font-size: 1rem;
-          }
+          right: 20px;
+          font-size: 1.2rem;
         }
+
+        @media (max-width: 359px) {
+          width: 80px;
+          height: 32px;
+          bottom: 0px;
+          right: 10px;
+          font-size: 1rem;
+        }
+      }
 
       img {
         width: 100%;
@@ -196,7 +197,7 @@
         margin-top: 10px;
         width: 140px;
         height: 46px;
-        padding-top: 11px;
+        padding-top: 12px;
         text-align: center;
         border-radius: 3px;
         text-decoration: none;
@@ -207,6 +208,7 @@
 
         &:hover {
           background: lighten(#ff0072, 9%);
+          transition: 0.3s;
           cursor: pointer;
         }
       }

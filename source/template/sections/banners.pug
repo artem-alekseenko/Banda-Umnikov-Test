@@ -13,17 +13,17 @@ section.banners
                         p.banner__1__timer-box__name Акция заканчивается 14 апреля. Через:
                         .banner__1__timer-box__timer 
                             .banner__1__timer-box__timer__field 
-                                .banner__1__timer-box__timer__field__value 1 2
+                                .banner__1__timer-box__timer__field__value#hours 1 2
                                     .banner__1__timer-box__timer__field__value__vertical-line
                                 .banner__1__timer-box__timer__field__caption часов
                             .banner__1__timer-box__timer__field 
-                                .banner__1__timer-box__timer__field__value 1 2
+                                .banner__1__timer-box__timer__field__value#min 1 2
                                     .banner__1__timer-box__timer__field__value__vertical-line
                                 .banner__1__timer-box__timer__field__caption минут
-                            .banner__1__timer-box__timer__field 
-                                .banner__1__timer-box__timer__field__value 1 2
-                                    .banner__1__timer-box__timer__field__value__vertical-line
-                                .banner__1__timer-box__timer__field__caption секунд
+                            .banner__1__timer-box__timer__field                                                                                               
+                                    .banner__1__timer-box__timer__field__value#sec 1 2   
+                                        .banner__1__timer-box__timer__field__value__vertical-line                             
+                                    .banner__1__timer-box__timer__field__caption секунд
                     .banner__proposal
                         .banner__proposal_price
                             .banner__proposal__price__new 9&nbsp;999&nbsp;&#8381;
@@ -33,4 +33,5 @@ section.banners
             .banner.banner__2
                 a.banner__2__picture(href="#")
                     img(src="./images/banner_2_background.png")  
-                    p.banner__proposal__button ПОДРОБНЕЕ    
+                    p.banner__proposal__button ПОДРОБНЕЕ  
+            .timer#clockdiv  
