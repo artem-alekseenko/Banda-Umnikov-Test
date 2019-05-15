@@ -116,6 +116,40 @@
     &__2 {
         height: 295px;
 
+        &__picture{
+          position: relative;
+        }
+
+        .banner__proposal__button {
+          position: absolute;
+          right: 23px;
+          bottom: 5px;
+
+          @media (max-width: 500px) {
+            width: 110px;
+            height: 40px;
+            bottom: 4px;
+            right: 18px;
+            font-size: 1.4rem;
+          }
+
+          @media (max-width: 420px) {
+            width: 90px;
+            height: 32px;
+            bottom: 5px;
+            right: 20px;
+            font-size: 1.2rem;
+          }
+
+          @media (max-width: 359px) {
+            width: 80px;
+            height: 32px;
+            bottom: 0px;
+            right: 10px;
+            font-size: 1rem;
+          }
+        }
+
       img {
         width: 100%;
         height: auto;
@@ -161,8 +195,8 @@
       &__button {
         margin-top: 10px;
         width: 140px;
-        height: 40px;
-        padding-top: 9px;
+        height: 46px;
+        padding-top: 11px;
         text-align: center;
         border-radius: 3px;
         text-decoration: none;
